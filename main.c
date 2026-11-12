@@ -1,13 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+void swap(int *x, int *y)
+{
+    int temp;
 
-int i = 300; //300으로 변경해서도 해보기
-int *pi = &i;
-char *pc = (char*)&i;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
 
-printf("%i, %i, %i\n", i, *pi, *pc);
+int main(void)
+{
+    int a = 3;
+    int b = 5;
 
-return 0;
+    swap(&a, &b);
+
+    printf("a:%d, b:%d\n", a, b);
+
+    return 0;
 }
